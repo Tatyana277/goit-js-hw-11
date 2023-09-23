@@ -21,9 +21,9 @@ export default class ImageApiService {
       page: this.page,
     });
     const url = `${BASE_URL}/?${params}`;
-    // console.log(url);
+    console.log(url);
     this.icrementPage();
-    // console.log(axios.get(url, { params }));
+    console.log(axios.get(url, { params }));
     return await axios.get(url);
   }
   icrementPage() {
