@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-const axios = require('axios');
+// const axios = require('axios');
 const API_KEY = '39605451-2a978709c93af824fe2a9e2e1';
 const BASE_URL = 'https://pixabay.com/api';
 
@@ -10,7 +10,7 @@ export default class ImageApiService {
     this.page = 1;
     this.per_page = 40;
   }
-  async fetchFotos() {
+  async fetchImages() {
     const params = new URLSearchParams({
       q: this.searchQuery,
       key: API_KEY,
@@ -21,12 +21,12 @@ export default class ImageApiService {
       page: this.page,
     });
     const url = `${BASE_URL}/?${params}`;
-    // console.log(url);
-    this.icrementPage();
-    // console.log(axios.get(url, { params }));
+    
+    this.addingPage();
+    
     return await axios.get(url, { params });
   }
-  icrementPage() {
+  addingPage() {
     this.page += 1;
   }
   resetPage() {

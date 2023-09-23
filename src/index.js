@@ -81,7 +81,7 @@ async function onSubmit(e) {
       clearImagesContainer();
       Notify.warning('Enter your search query');
     } else {
-      const response = await imageApiService.fetchFotos();
+      const response = await imageApiService.fetchImages();
       const {
         data: { hits, total, totalHits },
       } = response;
@@ -109,7 +109,7 @@ async function onLoadMoreClick(e) {
 
   e.preventDefault();
 
-  const response = await imageApiService.fetchFotos();
+  const response = await imageApiService.fetchImages();
   const {
     data: { hits },
   } = response;
